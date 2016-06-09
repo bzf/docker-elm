@@ -1,0 +1,16 @@
+#!/bin/sh
+
+function build_container {
+  docker build -t dockerelm_webpack .
+}
+
+function install_node_packages {
+  docker-compose run webpack npm install && \
+    docker-compose run webpack npm rebuild node-sass
+}
+
+function install_elm_packages {
+  docker-compose run webpack elm package install -y
+}
+
+build_container && install_node_packages && install_elm_packages

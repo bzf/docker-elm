@@ -1,0 +1,22 @@
+webpack:
+  build: .
+  command: npm start
+  ports:
+    - "8080:8080"
+  volumes:
+    - .:/app
+  volumes_from:
+    - node-modules
+    - elm-stuff
+
+node-modules:
+  image: dockerelm_webpack
+  command: echo "Building a node-modules cache container..."
+  volumes:
+    - /app/node_modules
+
+elm-stuff:
+  image: dockerelm_webpack
+  command: echo "Building a elm-stuff cache container..."
+  volumes:
+    - /app/elm-stuff
