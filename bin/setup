@@ -5,8 +5,7 @@ function build_container {
 }
 
 function install_node_packages {
-  docker-compose run webpack yarn && \
-    docker-compose run webpack npm rebuild node-sass
+  docker-compose run webpack yarn
 }
 
 function install_elm_packages {
