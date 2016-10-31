@@ -1,4 +1,4 @@
-FROM node:6.2.1-slim
+FROM node:6.9.1-slim
 MAINTAINER "André Ligné <hello@bzf.se>"
 
 RUN apt-get update && apt-get install -y git python build-essential
